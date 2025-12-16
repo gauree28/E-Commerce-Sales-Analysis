@@ -1,0 +1,6 @@
+order_id,order_date,customer_id,product,category,quantity,price,profit
+1001,2024-01-05,C101,Mobile,Electronics,2,15000,3000
+1002,2024-01-10,C102,Laptop,Electronics,1,55000,8000
+1003,2024-02-15,C103,Headphones,Accessories,3,2000,900
+1004,2024-03-12,C104,Shoes,Fashion,2,3000,1200
+1005,2024-04-18,C105,T-shirt,Fashion,5,800,1000

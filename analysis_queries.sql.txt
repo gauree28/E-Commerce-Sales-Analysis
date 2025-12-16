@@ -1,0 +1,26 @@
+-- Total Revenue
+SELECT SUM(quantity * price) AS total_revenue
+FROM ecommerce_sales;
+
+-- Monthly Revenue
+SELECT 
+    MONTH(order_date) AS month,
+    SUM(quantity * price) AS monthly_revenue
+FROM ecommerce_sales
+GROUP BY MONTH(order_date)
+ORDER BY month;
+
+-- Top Selling Products
+SELECT 
+    product,
+    SUM(quantity) AS total_quantity
+FROM ecommerce_sales
+GROUP BY product
+ORDER BY total_quantity DESC;
+
+-- Profit by Category
+SELECT 
+    category,
+    SUM(profit) AS total_profit
+FROM ecommerce_sales
+GROUP BY category;

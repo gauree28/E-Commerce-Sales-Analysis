@@ -1,0 +1,16 @@
+KPIs Created:
+- Total Revenue
+- Total Profit
+- Monthly Sales Trend
+- Category-wise Revenue
+- Top Products
+
+DAX Measures:
+Total Revenue = SUMX(ecommerce_sales, ecommerce_sales[quantity] * ecommerce_sales[price])
+Total Profit = SUM(ecommerce_sales[profit])
+
+Visuals Used:
+- Bar Chart
+- Line Chart
+- KPI Cards
+- Slicers (Category, Month)

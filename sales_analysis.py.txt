@@ -1,0 +1,29 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load data
+df = pd.read_csv("../data/ecommerce_sales.csv")
+
+# Convert date
+df['order_date'] = pd.to_datetime(df['order_date'])
+df['month'] = df['order_date'].dt.month_name()
+
+# Total Revenue
+df['revenue'] = df['quantity'] * df['price']
+total_revenue = df['revenue'].sum()
+print("Total Revenue:", total_revenue)
+
+# Monthly Sales
+monthly_sales = df.groupby('month')['revenue'].sum()
+print(monthly_sales)
+
+# Top Products
+top_products = df.groupby('product')['revenue'].sum().sort_values(ascending=False)
+print(top_products)
+
+# Plot Monthly Sales
+monthly_sales.plot(kind='bar', title='Monthly Sales')
+plt.xlabel('Month')
+plt.ylabel('Revenue')
+plt.tight_layout()
+plt.show()
